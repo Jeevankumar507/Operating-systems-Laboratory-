@@ -11,7 +11,7 @@ int main(){
 		scanf("%d",&choice);
 		switch(choice) {
 		case 1: if((in+1)%bufsize==out)
-					printf("\nBuffer is Full");
+				printf("\nBuffer is Full");
 				else{
 					printf("\nEnter the value: ");
 					scanf("%d", &produce);
@@ -21,6 +21,12 @@ int main(){
 				break;
 		case 2: if(in == out)
 					printf("\nBuffer is Empty");
+			else{
+				consume = buffer[out];
+				printf("\nThe consumed value is %d", consume);
+				out = (out+1)%bufsize;
+			}
+			break;
 		} 
 	}
 }
